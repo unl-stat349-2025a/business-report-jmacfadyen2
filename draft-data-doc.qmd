@@ -1,3 +1,22 @@
 ---
 title: "Draft: Data Documentation"
 ---
+
+### [Nebraska Bridge Data](https://www.fhwa.dot.gov/bridge/nbi/disclaim.cfm?nbiYear=2024/delimited&nbiState=NE24)
+
+#### [Recording and Coding Guide for the Structure Inventory and Appraisal of the Nation's Bridges](https://www.fhwa.dot.gov/bridge/mtguide.pdf)
+
+### Elements of the data:
+
+-   Created by the U.S. Department of Transportation and the Federal Highway Administration
+-   Created for the purpose of inventory, appraisal, and documentation of all bridges in the United States of America as well as provide information for highway bridge replacement and inspection programs.
+-   The data is about the inventory and appraisal of the nation's bridges, which includes variables on bridge structure, condition, location, traffic, design, maintenance, and other factors that can be found in the relevant codebook.
+-   The data is collected continuously and is being updated constantly. There are snapshots available of data from each year.
+-   The data is collected across the mainland United States of America as well as its territories, such as Puerto Rico and Guam. However, the data can be downloaded by state.
+-   Data was generated through field inspections of each bridge in the United States of America and then entered according to the standardized codes and measurements used for such collection. The National Bridge Inventory (NBI) is a database where such data is entered.
+-   The data is structured in such a way that each bridge is a unique observation with many variables/columns. There are too many to list, but they can be grouped into certain categories, such as "identification", "classification", "condition", etc.
+-   The International System of Units (SI) (metric system) is used for all of the measurements. The coding schemes are consistent and checked by the FHWA formatting system, which serves to validate the data.
+-   The data is intended for use by state and federal agencies, as well as other entities involved in the conditions of bridges across America. The data is publicly available and can be used for research (public domain).
+-   Certain variables related to classification or traffic can indicate the importance of the bridge being maintained.
+-   Certain variables related to the condition of the bridge can indicate the likelihood that it is going to collapse.
+-   Instruments such as tape measures, levels, inclinometers, GPS, and load-testing equipment were used to measure bridge dimensions, positions, and load-carrying capacity.
