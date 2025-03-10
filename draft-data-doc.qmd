@@ -1,8 +1,11 @@
 ---
 title: "Draft: Data Documentation"
+bibliography: references.bib
 ---
 
 ### [Nebraska Bridge Data](https://www.fhwa.dot.gov/bridge/nbi/disclaim.cfm?nbiYear=2024/delimited&nbiState=NE24)
+
+@zotero-19
 
 #### [Recording and Coding Guide for the Structure Inventory and Appraisal of the Nation's Bridges](https://www.fhwa.dot.gov/bridge/mtguide.pdf)
 
