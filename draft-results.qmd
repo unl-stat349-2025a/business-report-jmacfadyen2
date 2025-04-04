@@ -1,4 +1,97 @@
 ---
 title: "Draft: Results"
+format: 
+  html:
+    code-fold: true
+    code-tools: true
 ---
 
+Using the bridge inspection data from the National Bridge Inventory (NBI), an analysis of all bridges within the Omaha area can be conducted. This is done by identifying bridges with the Douglas County area code (055) and surrounding areas that serve Omaha traffic. Key variables from the NBI include deck condition, superstructure and substructure condition rating, structural evaluation, age of structure, average daily traffic, and bridge condition will be used in the primary analysis.
+
+```{r}
+#| include: FALSE
+library(tidyverse)
+library(ggplot2)
+nbi_data <- read.csv("NE24.txt", header = TRUE)
+data <- nbi_data %>%
+  filter(COUNTY_CODE_003 == "55")
+```
+
+```{r}
+ggplot(nbi_data, aes(x = LOWEST_RATING)) +
+  geom_histogram(binwidth = 1, fill = "grey", color = "black") +
+  stat_bin(
+    binwidth = 1, 
+    geom = "text", 
+    aes(label = after_stat(count)), 
+    vjust = -0.5, 
+    size = 3.5
+  ) +
+  scale_x_continuous(
+    breaks = seq(
+      from = floor(min(nbi_data$LOWEST_RATING, na.rm = TRUE)),
+      to = ceiling(max(nbi_data$LOWEST_RATING, na.rm = TRUE)),
+      by = 1
+    )
+  ) +
+  labs(
+    title = "Distribution of Bridge Condition Ratings",
+    x = "Lowest Condition Rating",
+    y = "Count"
+  ) +
+  theme_minimal()
+```
+
+It's found that there are 1217 bridges (7.9%) in Douglas County that have at least one condition rating of 4 or lower, indicating a poor bridge condition that needs to be addressed. Of those poor bridges, 6 of them are deemed to be in "imminent" failure condition, and 19 of them are in failed condition. Overall, bridges that are considered to be in poor condition are more often older bridges, with the average year built being 1942. The average year built for bridges in fair or good conditions is 1980, where bridges with fair or good conditions were more likely to be built recently.
+
+```{r}
+ggplot(nbi_data, aes(x = YEAR_BUILT_027, y = BRIDGE_CONDITION, fill = BRIDGE_CONDITION)) +
+  geom_boxplot() +
+  labs(
+    title = "Bridge Condition by Construction Year",
+    x = "Year Built",
+    y = "Bridge Condition Rating",
+    fill = "Condition"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(color = "gray40"),
+    legend.position = "right",
+    panel.grid.major.y = element_line(color = "gray90"),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+    ) +
+  scale_x_continuous(
+    breaks = seq(
+      floor(min(nbi_data$YEAR_BUILT_027, na.rm = TRUE)/10)*10,
+      ceiling(max(nbi_data$YEAR_BUILT_027, na.rm = TRUE)/10)*10,
+      10
+  )
+)
+a <- nbi_data %>% 
+  filter(LOWEST_RATING <= 4) %>% 
+  summarise(Avg_Year_Poor = round(mean(YEAR_BUILT_027, na.rm = TRUE), 0)) %>%
+  pull(Avg_Year_Poor)
+
+b <- nbi_data %>% 
+  filter(LOWEST_RATING > 4) %>% 
+  summarise(Avg_Year_Not_Poor = round(mean(YEAR_BUILT_027, na.rm = TRUE), 0)) %>% 
+  pull(Avg_Year_Not_Poor)
+
+nbi_data %>%
+  group_by(LOWEST_RATING) %>%
+  summarise(mean_ADT = mean(ADT_029, na.rm = TRUE)) %>%
+  ggplot(aes(x = LOWEST_RATING, y = mean_ADT)) +
+  geom_col(fill = "grey") +
+  geom_text(aes(label = round(mean_ADT)), vjust = -0.5) +
+  scale_x_continuous(breaks = scales::pretty_breaks()) +
+  labs(
+    title = "Average Traffic by Bridge Condition Rating",
+    x = "Lowest Condition Rating",
+    y = "Mean Daily Traffic"
+  ) +
+  theme_minimal()
+```
+
+For the bridges that are in danger of collapsing imminently, there is very low average daily traffic compared to bridges with higher condition ratings. Of the bridges that are out of commission, they had a higher average daily traffic number than bridges ranked 1 or 2.
