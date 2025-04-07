@@ -1,3 +1,20 @@
 ---
 title: "Draft: Intro/Conclusions"
 ---
+# Introduction
+
+Following recent incidents of high-profile bridge collapses on the East Coast, the concern of bridge infrastructure has heightened. Increased demands for assessments of transportation infrastructure has led the city of Omaha, Nebraska to call for an assessment of the risk of bridge failure within the city in the next five years. This report analyzes publicly available data from the National Bridge Inventory (NBI) to determine the probability and potential consequences of bridge failures in the Omaha metropolitan area, along with recommendations for how to minimize this risk.
+
+There are lots of factors in the assessment of bridge infrastructure and its risk of failure over time. Unfortunately, it is impossible to predict exactly when and where a bridge will collapse in the future, but there are key indicators that can be used to determine the risk of such an event happening. This assessment focuses on key structural indicators--including deck, superstructure, and substructure condition ratings--along with traffic volume and bridge age to identify high-risk structures.
+
+However, the rate in which bridge condition degradation occurs is unknown. There are many factors that may influence the rate in which a bridge's structure worsens, such as the build design, build quality, the amount of traffic it bears, and exposure to the elements. This means that the analysis lacks a comprehensive understanding of how bridges will increase in risk of failure over time. For the sake of being able to conduct analysis, this report assumes that the current state of bridge infrastructure is a result of conditions and trends that will be consistent over the next five years.
+
+Overall, there is a low probability that there will be a bridge collapse in Omaha, NE in the next five years. While some bridges in Douglas County have a poor condition rating, degradation to the point of failure within the next five years seems unlikely. Still, some of these bridges have high amounts of daily traffic, highlighting the importance of their upkeep. This is a result of investment in bridge infrastructure and maintenance, and is vital in maintaining the health and quality of transportation infrastructure.
+
+This report will first examine the methods of analysis in determining the probability of an Omaha bridge collapse and its severity in the next five years. It will then lay out the results of the analysis before leading into a discussion and conclusion regarding risk implications as well as future action and policy recommendations.
+
+# Conclusion
+
+The analysis of the Omaha's bridge inventory and infrastructure with the NBI data reveals critical insights into potential bridge failures over the next five years. While the vast majority of bridges in Douglas County are in fair or good condition, 15 bridges (2.9%) exhibit at least one structural component rated as being in "poor condition". These bridges are at a greater risk of collapsing in the near future than bridges with greater structural integrity. A handful of these bridges also have high amounts of traffic, particularly along streets near Interstate 80. However, they are steps away from more severe ratings (rating <= 3). This suggests that the immediate risk of a bridge collapse in Omaha is quite low.
+
+Even so, there are still long-term risks. The older a bridge is, the more likely it is to be in worse condition. As years pass, a bride's condition may deteriorate, which could turn a bridge in poor condition to immediate critical condition. Continued monitoring of these bridges to assess their condition is paramount in ensuring they do not collapse. It's a good thing that no bridges are considered critically deficient, but that comes from continued maintenance and proactive investment. Considering the lack of bridges rated below a 4, Douglas County is doing a good job in their investment in infrastructure and prevention of degradation of their bridges.
