@@ -1,6 +1,6 @@
 # Results
 
-Using the bridge inspection data from the National Bridge Inventory (NBI), an analysis of all bridges within the Omaha area can be conducted. This is done by identifying bridges with the Douglas County area code (055) and surrounding areas that serve Omaha traffic. Key variables from the NBI include deck condition, superstructure and substructure condition rating, structural evaluation, age of structure, average daily traffic, and bridge condition will be used in the primary analysis.
+Using the bridge inspection data from the National Bridge Inventory (NBI), an analysis of all bridges within the Omaha area can be conducted. This is done by identifying bridges with the Douglas County area code (055), which serve Omaha traffic and surrounding areas. Key variables from the NBI include deck condition, superstructure and substructure condition rating, structural evaluation, age of structure, average daily traffic (ADT), and bridge condition will be used in the primary analysis.
 
 ```{r, include = FALSE}
 library(tidyverse)
@@ -15,7 +15,7 @@ data %>%
   count(LOWEST_RATING) %>%
   ggplot(aes(x = LOWEST_RATING, y = n)) +
   geom_col(fill = "grey", color = "black") +
-  geom_text(aes(label = n, vjust = -0.5)) +
+  geom_text(aes(label = n, vjust = -0.2)) +
   scale_x_continuous(breaks = unique(sort(data$LOWEST_RATING))) +
   labs(
     title = "Distribution of Bridge Condition Ratings",
@@ -25,7 +25,7 @@ data %>%
   theme_minimal()
 ```
 
-It's found that there are 15 bridges (2.9%) in Douglas County that have at least one condition rating of 4, indicating "poor condition" where there is advanced section loss, deterioration, spalling, or scour. There are 0 bridges with a rating worse than 4, meaning that no bridges are considered to be in "imminent" failure condition or already failed/collapsed. Overall, bridges that are considered to be in poor condition are more often older bridges, with the average year built being 1942. The average year built for bridges in fair or good conditions is 1980, where bridges with fair or good conditions were more likely to be built recently.
+It's found that there are 15 bridges (2.9%) in Douglas County that have at least one condition rating of 4, indicating "poor condition" where there is advanced section loss, deterioration, spalling, or scour. There are 0 bridges with a rating worse than 4, meaning that no bridges are considered to be in "imminent" failure condition or already failed/collapsed.
 
 ```{r, echo = FALSE}
 ggplot(data, aes(x = YEAR_BUILT_027, y = factor(LOWEST_RATING))) +
@@ -36,6 +36,11 @@ ggplot(data, aes(x = YEAR_BUILT_027, y = factor(LOWEST_RATING))) +
     y = "Lowest Condition Rating"
   )
 
+```
+
+Overall, bridges that are considered to be in poor condition are more often older bridges, with the average year built being 1942. The average year built for bridges in fair or good conditions is 1980, where bridges with fair or good conditions were more likely to be built recently.
+
+```{r, echo = FALSE}
 a <- data %>% 
   filter(LOWEST_RATING == 4) %>% 
   summarise(Avg_Year_Poor = round(mean(YEAR_BUILT_027, na.rm = TRUE), 0)) %>%
@@ -54,19 +59,24 @@ data %>%
   geom_text(aes(label = round(mean_ADT)), vjust = -0.5) +
   scale_x_continuous(breaks = scales::pretty_breaks()) +
   labs(
-    title = "Average Traffic by Bridge Condition Rating",
+    title = "Average Daily Traffic by Bridge Condition Rating",
     x = "Lowest Condition Rating",
-    y = "Mean Daily Traffic"
+    y = "Average Daily Traffic"
   ) +
   theme_minimal()
+```
+
+Bridges that are in poor condition (4) have the 2nd smallest amount of ADT, where bridges that are in excellent condition (9) have the lowest amount of ADT. This is mostly due to the fact that there are only 4 bridges in excellent condition, whereas there are 15 bridges in poor condition.
+
+```{r, echo = FALSE}
 
 ggplot(data, aes(x = ADT_029, y = factor(LOWEST_RATING))) +
   geom_boxplot(fill = "grey", color = "black") +
   labs(
-    title = "Mean Daily Traffic Distribution by Lowest Bridge Condition Rating",
-    x = "Mean Daily Traffic",
+    title = "Average Daily Traffic Distribution by Lowest Bridge Condition Rating",
+    x = "Average Daily Traffic",
     y = "Lowest Condition Rating"
   )
 ```
 
-For the bridges that are in poor condition, there is very low average daily traffic compared to bridges with higher condition ratings.
+When examining the distribution of ADT across bridges by their lowest condition rating, it's apparent that there is a right skew across each bridge rating. The majority of bridges have low ADT values, but there are a few bridges that have extremely high values. There are high-ADT outliers across all levels of condition ratings except for 8, which has a wide interquartile range. Many of these bridges with high ADT values are along U.S. Interstate 80 and surrounding roads or U.S. Highways. Most of the poor-condition bridges with high ADT values are along U.S. Highway 75 and connected roads.

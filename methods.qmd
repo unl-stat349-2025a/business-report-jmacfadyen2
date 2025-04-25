@@ -1,0 +1,23 @@
+# Methods
+
+The analysis is based on the @zotero-19, a comprehensive federal database maintained by the Federal Highway Administration (FHWA) that contains inspection records for all public bridges in the United States. The dataset for Nebraska 2024 was downloaded and filtered to include only bridges within Douglas County (County Code 055) which encompasses Omaha and its immediate surrounding area.
+
+## Key Variables and Definitions
+
+The following NBI variables were used to assess bridge condition and risk:
+
+-   Deck, Superstructure, and Substructure Condition Ratings (Item 58, 59, 60):
+    -   Rated on a scale from 0 (failed) to 9 (excellent).
+    -   A rating of 4 or below indicates "poor condition", signaling advanced deterioration or even immediate failure for lower ratings.
+-   Structural Evaluation (Item 67):
+    -   Assesses the bridge's load-carrying capacity relative to its design.
+-   Year Built (Item 27):
+    -   Used to evaluate the relationship between bridge age and structural integrity
+-   Average Daily Traffic (Item 29):
+    -   Measures traffic volume to prioritize high-impact bridges.
+-   Lowest Rating (derived from deck, superstructure, and substructure ratings):
+    -   Identifies the most critical structural deficiency for each bridge.
+
+## Approach
+
+The Nebraska dataset was imported into R and only bridges in Douglas County (County Code 055) were examined. There were no bridges with missing or inconsistent values. Histograms and box plots were generated to visualize the distribution of bridge condition ratings as well as the relationship between construction year and bridge condition. Summary statistics were generated to compute the average age of poor-condition bridges (rating \<= 4) and fair-condition bridges (rating > 4), as well as the Average Daily Traffic (ADT). Bridges with a Lowest Rating of 4 or below were carefully examined and their ADT and Year Built were noted.

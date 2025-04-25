@@ -1,3 +1,29 @@
-# Summary
+# Executive Summary
 
-In summary, this book has no content whatsoever.
+Recent high-profile bridge collapses on the East Coast have heightened concerns about aging infrastructure, prompting the city of Omaha, Nebraska, to assess the risk of bridge failure within the next five years. This report analyzes publicly available data from the National Bridge Inventory (NBI) to evaluate the structural integrity of Omaha’s bridges, identifying key risk factors such as deck, superstructure, and substructure condition ratings, traffic volume, and bridge age. While predicting exact failure timelines is impossible, these indicators help prioritize high-risk structures for maintenance and intervention.
+
+## Key Findings
+
+-   Low Immediate Risk: Only 15 bridges (2.9%) in Douglas County have at least one structural component rated in "poor condition" (rating of 4), with none rated as "critically deficient" or worse (\<= 3).
+
+-   Older Bridges at Higher Risk: Bridges in poor condition average 69 years old (built in 1956), compared to 53 years (built in 1972) for those in "fair condition" (5).
+
+-   Lower Traffic Exposure: Most structurally deficient bridges have low daily traffic volumes, reducing immediate public safety concerns. However, a few high-traffic, structurally deficient bridges near Interstate 80 require close monitoring.
+
+-   Strong Infrastructure Management: Omaha’s lack of critically deficient bridges reflects effective maintenance and investment, but continued vigilance is necessary to prevent future deterioration.
+
+## Recommendations
+
+-   Prioritize High-Risk Bridges: Focus inspections and repairs on the 15 bridges with poor ratings, particularly those near high-traffic corridors.
+
+-   Increase Monitoring Frequency: Implement more frequent structural assessments for aging bridges to detect accelerated degradation.
+
+-   Proactive Maintenance & Funding: Sustain investment in infrastructure upkeep to prevent bridges from declining into critical condition.
+
+-   Long-Term Planning: Develop a phased replacement strategy for the oldest bridges to mitigate future risks.
+
+## Conclusion
+
+While the probability of a bridge collapse in Omaha within the next five years is low, proactive measures are essential to maintain public safety and infrastructure reliability. Omaha’s current bridge conditions reflect strong maintenance practices, but ongoing investment and strategic planning will be crucial to address aging structures and growing transportation demands.
+
+This summary distills the report’s critical insights, ensuring decision-makers understand the risks, current infrastructure strengths, and necessary actions to safeguard Omaha’s bridges.

@@ -3,14 +3,17 @@ project:
   output-dir: docs
 
 book:
-  title: "Evaluation of Omaha, NE Bridge Integrity"
+  title: "Business Report: Evaluation of Omaha, NE Bridge Integrity"
   author: "Jack Macfadyen"
   page-footer:
     left: "Copyright 2025, Jack Macfadyen"
   chapters:
     - index.qmd
-    - intro.qmd
     - summary.qmd
+    - intro.qmd
+    - methods.qmd
+    - results.qmd
+    - conclusions.qmd
     - references.qmd
   appendices:
     - draft-data-doc.qmd
@@ -24,8 +27,12 @@ format:
   html:
     highlight-style: a11y
     theme: cosmo
+    toc: true
+    number-sections: false
   pdf:
     documentclass: scrreprt
+    toc: true
+    number-sections: false
 
 
 
