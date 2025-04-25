@@ -18,7 +18,7 @@ data <- nbi_data %>%
 ```
 
 ```{r}
-ggplot(nbi_data, aes(x = LOWEST_RATING)) +
+ggplot(data, aes(x = LOWEST_RATING)) +
   geom_histogram(binwidth = 1, fill = "grey", color = "black") +
   stat_bin(
     binwidth = 1, 
@@ -42,10 +42,10 @@ ggplot(nbi_data, aes(x = LOWEST_RATING)) +
   theme_minimal()
 ```
 
-It's found that there are 1217 bridges (7.9%) in Douglas County that have at least one condition rating of 4 or lower, indicating a poor bridge condition that needs to be addressed. Of those poor bridges, 6 of them are deemed to be in "imminent" failure condition, and 19 of them are in failed condition. Overall, bridges that are considered to be in poor condition are more often older bridges, with the average year built being 1942. The average year built for bridges in fair or good conditions is 1980, where bridges with fair or good conditions were more likely to be built recently.
+It's found that there are 15 bridges (2.9%) in Douglas County that have at least one condition rating of 4, indicating "poor condition" where there is advanced section loss, deterioration, spalling, or scour. There are 0 bridges with a rating worse than 4, meaning that no bridges are considered to be in "imminent" failure condition or already failed/collapsed. Overall, bridges that are considered to be in poor condition are more often older bridges, with the average year built being 1942. The average year built for bridges in fair or good conditions is 1980, where bridges with fair or good conditions were more likely to be built recently.
 
 ```{r}
-ggplot(nbi_data, aes(x = YEAR_BUILT_027, y = BRIDGE_CONDITION, fill = BRIDGE_CONDITION)) +
+ggplot(data, aes(x = YEAR_BUILT_027, y = BRIDGE_CONDITION, fill = BRIDGE_CONDITION)) +
   geom_boxplot() +
   labs(
     title = "Bridge Condition by Construction Year",
@@ -69,19 +69,19 @@ ggplot(nbi_data, aes(x = YEAR_BUILT_027, y = BRIDGE_CONDITION, fill = BRIDGE_CON
       10
   )
 )
-a <- nbi_data %>% 
+a <- data %>% 
   filter(LOWEST_RATING <= 4) %>% 
   summarise(Avg_Year_Poor = round(mean(YEAR_BUILT_027, na.rm = TRUE), 0)) %>%
   pull(Avg_Year_Poor)
 
-b <- nbi_data %>% 
+b <- data %>% 
   filter(LOWEST_RATING > 4) %>% 
   summarise(Avg_Year_Not_Poor = round(mean(YEAR_BUILT_027, na.rm = TRUE), 0)) %>% 
   pull(Avg_Year_Not_Poor)
 
-nbi_data %>%
+data %>%
   group_by(LOWEST_RATING) %>%
-  summarise(mean_ADT = mean(ADT_029, na.rm = TRUE)) %>%
+  summarise(mean_ADT = sum(ADT_029, na.rm = TRUE)) %>%
   ggplot(aes(x = LOWEST_RATING, y = mean_ADT)) +
   geom_col(fill = "grey") +
   geom_text(aes(label = round(mean_ADT)), vjust = -0.5) +
@@ -94,4 +94,4 @@ nbi_data %>%
   theme_minimal()
 ```
 
-For the bridges that are in danger of collapsing imminently, there is very low average daily traffic compared to bridges with higher condition ratings. Of the bridges that are out of commission, they had a higher average daily traffic number than bridges ranked 1 or 2.
+For the bridges that are in poor condition, there is very low average daily traffic compared to bridges with higher condition ratings.
