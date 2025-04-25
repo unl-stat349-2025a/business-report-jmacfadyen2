@@ -1,7 +1,4 @@
----
-title: "Draft: Intro/Conclusions"
----
-# Introduction
+# Draft: Introduction
 
 Following recent incidents of high-profile bridge collapses on the East Coast, the concern of bridge infrastructure has heightened. Increased demands for assessments of transportation infrastructure has led the city of Omaha, Nebraska to call for an assessment of the risk of bridge failure within the city in the next five years. This report analyzes publicly available data from the National Bridge Inventory (NBI) to determine the probability and potential consequences of bridge failures in the Omaha metropolitan area, along with recommendations for how to minimize this risk.
 
@@ -13,7 +10,7 @@ Overall, there is a low probability that there will be a bridge collapse in Omah
 
 This report will first examine the methods of analysis in determining the probability of an Omaha bridge collapse and its severity in the next five years. It will then lay out the results of the analysis before leading into a discussion and conclusion regarding risk implications as well as future action and policy recommendations.
 
-# Conclusion
+# Draft: Conclusion
 
 The analysis of the Omaha's bridge inventory and infrastructure with the NBI data reveals critical insights into potential bridge failures over the next five years. While the vast majority of bridges in Douglas County are in fair or good condition, 15 bridges (2.9%) exhibit at least one structural component rated as being in "poor condition". These bridges are at a greater risk of collapsing in the near future than bridges with greater structural integrity. A handful of these bridges also have high amounts of traffic, particularly along streets near Interstate 80. However, they are steps away from more severe ratings (rating <= 3). This suggests that the immediate risk of a bridge collapse in Omaha is quite low.
 

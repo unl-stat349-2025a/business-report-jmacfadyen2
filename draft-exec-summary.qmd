@@ -1,8 +1,4 @@
----
-title: "Draft: Executive Summary"
----
-
-# Executive Summary
+# Draft: Executive Summary
 
 Recent high-profile bridge collapses on the East Coast have heightened concerns about aging infrastructure, prompting the city of Omaha, Nebraska, to assess the risk of bridge failure within the next five years. This report analyzes publicly available data from the National Bridge Inventory (NBI) to evaluate the structural integrity of Omaha’s bridges, identifying key risk factors such as deck, superstructure, and substructure condition ratings, traffic volume, and bridge age. While predicting exact failure timelines is impossible, these indicators help prioritize high-risk structures for maintenance and intervention. Key Findings
 

@@ -1,6 +1,6 @@
 # Methods
 
-The analysis is based on the @zotero-19, a comprehensive federal database maintained by the Federal Highway Administration (FHWA) that contains inspection records for all public bridges in the United States. The dataset for Nebraska 2024 was downloaded and filtered to include only bridges within Douglas County (County Code 055) which encompasses Omaha and its immediate surrounding area.
+The analysis is based on the @zotero-20 and @zotero-19, a comprehensive federal database maintained by the Federal Highway Administration (FHWA) that contains inspection records for all public bridges in the United States. The dataset for Nebraska 2024 was downloaded and filtered to include only bridges within Douglas County (County Code 055) which encompasses Omaha and its immediate surrounding area.
 
 ## Key Variables and Definitions
 

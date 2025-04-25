@@ -56,7 +56,7 @@ data %>%
   summarise(mean_ADT = sum(ADT_029, na.rm = TRUE)) %>%
   ggplot(aes(x = LOWEST_RATING, y = mean_ADT)) +
   geom_col(fill = "grey", color = "black") +
-  geom_text(aes(label = round(mean_ADT)), vjust = -0.5) +
+  geom_text(aes(label = round(mean_ADT)), vjust = -0.2) +
   scale_x_continuous(breaks = scales::pretty_breaks()) +
   labs(
     title = "Average Daily Traffic by Bridge Condition Rating",
