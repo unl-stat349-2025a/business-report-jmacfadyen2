@@ -1,49 +1,29 @@
-# Preface
+# Executive Summary
 
-You are a data scientist for a mid-sized business, in a small group of 3-4 data scientists. You've been tasked with creating a report evaluating a scenario for your business. 
-Your colleagues will also be evaluating the same scenario, and your reports will be used in aggregate to determine a consensus (or lack thereof) on the company's action. 
-The reports will also be used to inform downsizing that is rumored to be coming - you want to ensure your report is better than your peers so that you aren't as easy to cut. 
+Recent high-profile bridge collapses on the East Coast have heightened concerns about aging infrastructure, prompting the city of Omaha, Nebraska, to assess the risk of bridge failure within the next five years. This report analyzes publicly available data from the National Bridge Inventory (NBI) to evaluate the structural integrity of Omaha’s bridges, identifying key risk factors such as deck, superstructure, and substructure condition ratings, traffic volume, and bridge age. While predicting exact failure timelines is impossible, these indicators help prioritize high-risk structures for maintenance and intervention.
 
-You may talk to your peers who are assigned the same scenario, but you do not want to collaborate too closely, lest you both become targets of the rumored layoffs. 
+## Key Findings
 
+-   Low Immediate Risk: Only 15 bridges (2.9%) in Douglas County have at least one structural component rated in "poor condition" (rating of 4), with none rated as "critically deficient" or worse ($\le$ 3).
 
----
+-   Older Bridges at Higher Risk: Bridges in poor condition average 69 years old (built in 1956), compared to 53 years (built in 1972) for those in "fair condition" (5).
 
-I've scaffolded this report for you to make this process easier - as we talk about different sections of a report in class and read about how to create similar sections, you will practice by writing the equivalent section of your report.
+-   Lower Traffic Exposure: Most structurally deficient bridges have low daily traffic volumes, reducing immediate public safety concerns. However, a few high-traffic, structurally deficient bridges near Interstate 80 require close monitoring.
 
+-   Strong Infrastructure Management: Omaha’s lack of critically deficient bridges reflects effective maintenance and investment, but continued vigilance is necessary to prevent future deterioration.
 
-The basic steps for this task are as follows:
+## Recommendations
 
-- Identify the research question from the business question
+-   Prioritize High-Risk Bridges: Focus inspections and repairs on the 15 bridges with poor ratings, particularly those near high-traffic corridors.
 
-- Identify data set(s) which are (1) publicly available (you don't have a budget to pay for private data) and (2) relevant to your task
+-   Increase Monitoring Frequency: Implement more frequent structural assessments for aging bridges to detect accelerated degradation.
 
-    - (HW Week 6) Document your data sets in `draft-data-doc.qmd`
+-   Proactive Maintenance & Funding: Sustain investment in infrastructure upkeep to prevent bridges from declining into critical condition.
 
-- Conduct a statistical analysis to support your answer to your research and business questions
+-   Long-Term Planning: Develop a phased replacement strategy for the oldest bridges to mitigate future risks.
 
-    - Write a methods section for your business report corresponding to your statistical analysis
+## Conclusion
 
-    - (HW Week 9) Draft of results section of business report with relevant graphics/visual aids in `draft-results.qmd`
-    
-- Write your report
+While the probability of a bridge collapse in Omaha within the next five years is low, proactive measures are essential to maintain public safety and infrastructure reliability. Omaha’s current bridge conditions reflect strong maintenance practices, but ongoing investment and strategic planning will be crucial to address aging structures and growing transportation demands.
 
-    - (HW Week 10) Draft of Intro/Conclusion sections in `draft-intro-conclusions.qmd`
-    
-    - (HW Week 11) Draft of Executive summary section in `draft-exec-summary.qmd`
-    
-- Revise your report
-
-    - (HW Week 12 -- not turned in) Revise your report
-    
-    - (HW Week 13) - Rough draft of report due. Create one or more qmd files for your report (you can overwrite or delete intro.qmd and summary.qmd), include the names of each file (in order) in `_quarto.yml`. You should use references (edit references.bib and use pandoc citations). Make sure your report compiles and looks reasonable in both html and pdf. 
-    
-    - Develop a presentation to go along with your report (Week 13). Create slides for your report using quarto. 
-
-- Peer revise reports
-
-    - Peer revise reports
-    
-    - (HW Week 14) - Make edits to your report from comments received from peer review
-
-- Final report & presentation due
+This summary distills the report’s critical insights, ensuring decision-makers understand the risks, current infrastructure strengths, and necessary actions to safeguard Omaha’s bridges.

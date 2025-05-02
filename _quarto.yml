@@ -9,13 +9,13 @@ book:
     left: "Copyright 2025, Jack Macfadyen"
   chapters:
     - index.qmd
-    - summary.qmd
     - intro.qmd
     - methods.qmd
     - results.qmd
     - conclusions.qmd
     - references.qmd
   appendices:
+    - preface.qmd
     - draft-data-doc.qmd
     - draft-results.qmd
     - draft-intro-conclusions.qmd
@@ -33,6 +33,4 @@ format:
     documentclass: scrreprt
     toc: true
     number-sections: false
-
-
 
